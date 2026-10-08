@@ -402,6 +402,122 @@
 
 
     <!-- =========================
+         AGE / APPEARANCE / LUCK
+         ========================= -->
+
+    <main
+        id="fateDetailsScreen"
+        class="screen secondary-screen hidden"
+    >
+
+        <div class="secondary-content">
+
+            <h2>
+                FATE'S DESIGN
+            </h2>
+
+
+            <div class="ornament">
+                <span></span>
+                <i>✦</i>
+                <span></span>
+            </div>
+
+
+            <p class="mode-question">
+                Some things are decided before you are born.
+            </p>
+
+
+            <!-- =========================
+                 CURRENT ROLL
+                 ========================= -->
+
+            <div
+                id="fateDetailRollDisplay"
+                class="origin-roll-display"
+            >
+
+                <div
+                    id="fateDetailName"
+                    class="roll-label"
+                >
+                    AGE
+                </div>
+
+
+                <div
+                    id="fateDetailRollNumber"
+                    class="origin-roll-number"
+                >
+                    ?
+                </div>
+
+
+                <div
+                    id="fateDetailResult"
+                    class="roll-status"
+                >
+                    Awaiting Fate...
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 REVEALED RESULTS
+                 ========================= -->
+
+            <div
+                id="fateDetailsResults"
+                class="fate-details-results"
+            >
+
+            </div>
+
+
+            <!-- =========================
+                 ROLL BUTTON
+                 ========================= -->
+
+            <button
+                id="rollFateDetailButton"
+                class="menu-button"
+            >
+                ROLL AGE
+            </button>
+
+
+            <!-- =========================
+                 CONTINUE
+                 ========================= -->
+
+            <button
+                id="fateDetailsContinueButton"
+                class="menu-button hidden"
+            >
+                CONTINUE
+            </button>
+
+
+            <!-- =========================
+                 BACK
+                 ========================= -->
+
+            <button
+                id="fateDetailsBackButton"
+                class="back-button"
+            >
+                BACK
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
          CONTINUE
          ========================= -->
 
@@ -497,6 +613,8 @@
     <script src="js/characterCreation.js"></script>
 
     <script src="js/statPotential.js"></script>
+
+    <script src="js/fateDetails.js"></script>
 
     <script src="js/lobby.js"></script>
 
