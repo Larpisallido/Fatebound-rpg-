@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -11,17 +12,25 @@
 
     <title>Fatebound</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
 
 
 <body>
 
+
     <!-- =========================
          LOBBY
          ========================= -->
 
-    <main id="lobby" class="screen lobby">
+    <main
+        id="lobby"
+        class="screen lobby"
+    >
 
         <div class="lobby-content">
 
@@ -29,13 +38,21 @@
 
                 <h1>FATEBOUND</h1>
 
+
                 <div class="ornament">
+
                     <span></span>
+
                     <i>✦</i>
+
                     <span></span>
+
                 </div>
 
-                <p>A LIVING WORLD RPG</p>
+
+                <p>
+                    A LIVING WORLD RPG
+                </p>
 
             </div>
 
@@ -90,13 +107,21 @@
 
         <div class="secondary-content">
 
-            <h2>NEW GAME</h2>
+            <h2>
+                NEW GAME
+            </h2>
+
 
             <div class="ornament">
+
                 <span></span>
+
                 <i>✦</i>
+
                 <span></span>
+
             </div>
+
 
             <p class="mode-question">
                 Choose your path.
@@ -111,6 +136,7 @@
                 <strong>
                     FATEBOUND MODE
                 </strong>
+
 
                 <small>
                     Everything is decided by Fate.
@@ -127,6 +153,7 @@
                 <strong>
                     CLASSIC MODE
                 </strong>
+
 
                 <small>
                     Create your own character.
@@ -165,9 +192,13 @@
 
 
             <div class="ornament">
+
                 <span></span>
+
                 <i>✦</i>
+
                 <span></span>
+
             </div>
 
 
@@ -181,9 +212,7 @@
             </p>
 
 
-            <!-- =========================
-                 D100 ROLL DISPLAY
-                 ========================= -->
+            <!-- ORIGIN ROLL -->
 
             <div
                 id="originRollDisplay"
@@ -213,9 +242,7 @@
             </div>
 
 
-            <!-- =========================
-                 ORIGIN RESULT
-                 ========================= -->
+            <!-- ORIGIN RESULT -->
 
             <div
                 id="originResult"
@@ -244,10 +271,6 @@
             </div>
 
 
-            <!-- =========================
-                 ROLL ORIGIN
-                 ========================= -->
-
             <button
                 id="rollOriginButton"
                 class="menu-button"
@@ -255,10 +278,6 @@
                 ROLL ORIGIN
             </button>
 
-
-            <!-- =========================
-                 CONTINUE FROM ORIGIN
-                 ========================= -->
 
             <button
                 id="originContinueButton"
@@ -268,15 +287,17 @@
             </button>
 
 
-            <!-- =========================
-                 BACK
-                 ========================= -->
+            <!-- IMPORTANT:
+                 This does NOT allow rerolling.
+                 It only abandons the current
+                 character and returns to lobby.
+            -->
 
             <button
-                id="characterCreationBackButton"
+                id="characterCreationLobbyButton"
                 class="back-button"
             >
-                BACK
+                RETURN TO LOBBY
             </button>
 
         </div>
@@ -302,9 +323,13 @@
 
 
             <div class="ornament">
+
                 <span></span>
+
                 <i>✦</i>
+
                 <span></span>
+
             </div>
 
 
@@ -312,10 +337,6 @@
                 Your potential is decided by Fate.
             </p>
 
-
-            <!-- =========================
-                 CURRENT STAT ROLL
-                 ========================= -->
 
             <div
                 id="statRollDisplay"
@@ -348,21 +369,12 @@
             </div>
 
 
-            <!-- =========================
-                 COMPLETED STATS
-                 ========================= -->
-
             <div
                 id="completedStats"
                 class="completed-stats"
             >
-
             </div>
 
-
-            <!-- =========================
-                 ROLL STAT
-                 ========================= -->
 
             <button
                 id="rollStatButton"
@@ -372,10 +384,6 @@
             </button>
 
 
-            <!-- =========================
-                 CONTINUE
-                 ========================= -->
-
             <button
                 id="statPotentialContinueButton"
                 class="menu-button hidden"
@@ -384,15 +392,11 @@
             </button>
 
 
-            <!-- =========================
-                 BACK
-                 ========================= -->
-
             <button
-                id="statPotentialBackButton"
+                id="statPotentialLobbyButton"
                 class="back-button"
             >
-                BACK
+                RETURN TO LOBBY
             </button>
 
         </div>
@@ -418,9 +422,13 @@
 
 
             <div class="ornament">
+
                 <span></span>
+
                 <i>✦</i>
+
                 <span></span>
+
             </div>
 
 
@@ -428,10 +436,6 @@
                 Some things are decided before you are born.
             </p>
 
-
-            <!-- =========================
-                 CURRENT ROLL
-                 ========================= -->
 
             <div
                 id="fateDetailRollDisplay"
@@ -464,21 +468,12 @@
             </div>
 
 
-            <!-- =========================
-                 REVEALED RESULTS
-                 ========================= -->
-
             <div
                 id="fateDetailsResults"
                 class="fate-details-results"
             >
-
             </div>
 
-
-            <!-- =========================
-                 ROLL BUTTON
-                 ========================= -->
 
             <button
                 id="rollFateDetailButton"
@@ -488,10 +483,6 @@
             </button>
 
 
-            <!-- =========================
-                 CONTINUE
-                 ========================= -->
-
             <button
                 id="fateDetailsContinueButton"
                 class="menu-button hidden"
@@ -500,15 +491,11 @@
             </button>
 
 
-            <!-- =========================
-                 BACK
-                 ========================= -->
-
             <button
-                id="fateDetailsBackButton"
+                id="fateDetailsLobbyButton"
                 class="back-button"
             >
-                BACK
+                RETURN TO LOBBY
             </button>
 
         </div>
@@ -532,15 +519,22 @@
                 CONTINUE
             </h2>
 
+
             <div class="ornament">
+
                 <span></span>
+
                 <i>✦</i>
+
                 <span></span>
+
             </div>
+
 
             <p>
                 No saved adventures yet.
             </p>
+
 
             <button
                 id="continueBackButton"
@@ -570,15 +564,22 @@
                 FATEBOUND
             </h2>
 
+
             <div class="ornament">
+
                 <span></span>
+
                 <i>✦</i>
+
                 <span></span>
+
             </div>
+
 
             <p class="game-message">
                 Your adventure begins.
             </p>
+
 
             <button
                 id="enterWorldButton"
@@ -586,6 +587,7 @@
             >
                 ENTER WORLD
             </button>
+
 
             <button
                 id="gameBackButton"
@@ -617,6 +619,7 @@
     <script src="js/fateDetails.js"></script>
 
     <script src="js/lobby.js"></script>
+
 
 </body>
 
