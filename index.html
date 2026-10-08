@@ -80,7 +80,7 @@
 
 
     <!-- =========================
-         NEW GAME / MODE SELECTION
+         NEW GAME
          ========================= -->
 
     <main
@@ -92,24 +92,16 @@
 
             <h2>NEW GAME</h2>
 
-
             <div class="ornament">
-
                 <span></span>
-
                 <i>✦</i>
-
                 <span></span>
-
             </div>
-
 
             <p class="mode-question">
                 Choose your path.
             </p>
 
-
-            <!-- FATEBOUND MODE -->
 
             <button
                 id="fateboundModeButton"
@@ -126,8 +118,6 @@
 
             </button>
 
-
-            <!-- CLASSIC MODE -->
 
             <button
                 id="classicModeButton"
@@ -159,7 +149,7 @@
 
 
     <!-- =========================
-         FATEBOUND CHARACTER CREATION
+         CHARACTER CREATION
          ========================= -->
 
     <main
@@ -175,13 +165,9 @@
 
 
             <div class="ornament">
-
                 <span></span>
-
                 <i>✦</i>
-
                 <span></span>
-
             </div>
 
 
@@ -193,6 +179,38 @@
             <p id="creationDescription">
                 Your beginning is decided by Fate.
             </p>
+
+
+            <!-- =========================
+                 D100 ROLL DISPLAY
+                 ========================= -->
+
+            <div
+                id="originRollDisplay"
+                class="origin-roll-display hidden"
+            >
+
+                <div class="roll-label">
+                    ORIGIN
+                </div>
+
+
+                <div
+                    id="originRollNumber"
+                    class="origin-roll-number"
+                >
+                    ?
+                </div>
+
+
+                <div
+                    id="rollStatus"
+                    class="roll-status"
+                >
+                    Awaiting Fate...
+                </div>
+
+            </div>
 
 
             <!-- =========================
@@ -227,7 +245,7 @@
 
 
             <!-- =========================
-                 ROLL ORIGIN
+                 ROLL BUTTON
                  ========================= -->
 
             <button
@@ -268,7 +286,7 @@
 
 
     <!-- =========================
-         CONTINUE SCREEN
+         CONTINUE
          ========================= -->
 
     <main
@@ -282,22 +300,15 @@
                 CONTINUE
             </h2>
 
-
             <div class="ornament">
-
                 <span></span>
-
                 <i>✦</i>
-
                 <span></span>
-
             </div>
-
 
             <p>
                 No saved adventures yet.
             </p>
-
 
             <button
                 id="continueBackButton"
@@ -313,7 +324,7 @@
 
 
     <!-- =========================
-         GAME / WORLD SCREEN
+         GAME SCREEN
          ========================= -->
 
     <main
@@ -327,22 +338,15 @@
                 FATEBOUND
             </h2>
 
-
             <div class="ornament">
-
                 <span></span>
-
                 <i>✦</i>
-
                 <span></span>
-
             </div>
-
 
             <p class="game-message">
                 Your adventure begins.
             </p>
-
 
             <button
                 id="enterWorldButton"
@@ -350,7 +354,6 @@
             >
                 ENTER WORLD
             </button>
-
 
             <button
                 id="gameBackButton"
