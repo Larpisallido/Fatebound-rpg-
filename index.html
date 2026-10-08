@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
     <!-- =========================
@@ -55,18 +56,27 @@
 
 
         <button id="settingsButton" class="settings-button">
+
             ⚙
-            <span>SETTINGS</span>
+
+            <span>
+                SETTINGS
+            </span>
+
         </button>
 
     </main>
+
 
 
     <!-- =========================
          NEW GAME / MODE SELECTION
          ========================= -->
 
-    <main id="newGameScreen" class="screen secondary-screen hidden">
+    <main
+        id="newGameScreen"
+        class="screen secondary-screen hidden"
+    >
 
         <div class="secondary-content">
 
@@ -78,14 +88,20 @@
                 <span></span>
             </div>
 
+
             <p class="mode-question">
                 Choose your path.
             </p>
 
 
-            <button id="fateboundModeButton" class="menu-button mode-button">
+            <button
+                id="fateboundModeButton"
+                class="menu-button mode-button"
+            >
 
-                <strong>FATEBOUND MODE</strong>
+                <strong>
+                    FATEBOUND MODE
+                </strong>
 
                 <small>
                     Everything is decided by Fate.
@@ -94,9 +110,14 @@
             </button>
 
 
-            <button id="classicModeButton" class="menu-button mode-button">
+            <button
+                id="classicModeButton"
+                class="menu-button mode-button"
+            >
 
-                <strong>CLASSIC MODE</strong>
+                <strong>
+                    CLASSIC MODE
+                </strong>
 
                 <small>
                     Create your own character.
@@ -105,7 +126,10 @@
             </button>
 
 
-            <button id="newGameBackButton" class="back-button">
+            <button
+                id="newGameBackButton"
+                class="back-button"
+            >
                 BACK
             </button>
 
@@ -114,11 +138,15 @@
     </main>
 
 
+
     <!-- =========================
          CONTINUE SCREEN
          ========================= -->
 
-    <main id="continueScreen" class="screen secondary-screen hidden">
+    <main
+        id="continueScreen"
+        class="screen secondary-screen hidden"
+    >
 
         <div class="secondary-content">
 
@@ -130,11 +158,16 @@
                 <span></span>
             </div>
 
+
             <p>
                 No saved adventures yet.
             </p>
 
-            <button id="continueBackButton" class="back-button">
+
+            <button
+                id="continueBackButton"
+                class="back-button"
+            >
                 BACK
             </button>
 
@@ -143,40 +176,62 @@
     </main>
 
 
+
+    <!-- =========================
+         GAME SCREEN
+         ========================= -->
+
+    <main
+        id="gameScreen"
+        class="screen game-screen hidden"
+    >
+
+        <div class="game-content">
+
+            <h2>
+                FATEBOUND
+            </h2>
+
+
+            <div class="ornament">
+                <span></span>
+                <i>✦</i>
+                <span></span>
+            </div>
+
+
+            <p class="game-message">
+                Your adventure begins.
+            </p>
+
+
+            <button
+                id="enterWorldButton"
+                class="menu-button"
+            >
+                ENTER WORLD
+            </button>
+
+
+            <button
+                id="gameBackButton"
+                class="back-button"
+            >
+                RETURN TO LOBBY
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
     <script src="script.js"></script>
 
 </body>
 
 </html>
-
-<!-- =========================
-     GAME SCREEN
-     ========================= -->
-
-<main id="gameScreen" class="screen game-screen hidden">
-
-    <div class="game-content">
-
-        <h2>FATEBOUND</h2>
-
-        <div class="ornament">
-            <span></span>
-            <i>✦</i>
-            <span></span>
-        </div>
-
-        <p class="game-message">
-            Your adventure begins.
-        </p>
-
-        <button id="enterWorldButton" class="menu-button">
-            ENTER WORLD
-        </button>
-
-        <button id="gameBackButton" class="back-button">
-            RETURN TO LOBBY
-        </button>
-
-    </div>
-
-</main>
