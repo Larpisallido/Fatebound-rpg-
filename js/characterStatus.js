@@ -712,7 +712,7 @@ if (characterStatusContinueButton) {
 
             saveGame(currentCharacter);
 
-            showGame();
+            startWorld();
 
         }
     );
