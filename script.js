@@ -1,5 +1,5 @@
 /* ==========================================
-   FATEBOUND MENU
+   FATEBOUND - MAIN SCRIPT
    ========================================== */
 
 
@@ -44,6 +44,13 @@ const continueBackButton =
 
 
 /* ==========================================
+   SAVE DATA
+   ========================================== */
+
+const SAVE_KEY = "fatebound_save";
+
+
+/* ==========================================
    SCREEN NAVIGATION
    ========================================== */
 
@@ -82,7 +89,7 @@ function showContinue() {
 
 
 /* ==========================================
-   LOBBY
+   NEW GAME
    ========================================== */
 
 newGameButton.addEventListener(
@@ -91,14 +98,40 @@ newGameButton.addEventListener(
 );
 
 
+/* ==========================================
+   CONTINUE
+   ========================================== */
+
 continueButton.addEventListener(
     "click",
-    showContinue
+    () => {
+
+        const savedGame =
+            localStorage.getItem(SAVE_KEY);
+
+        if (!savedGame) {
+
+            showContinue();
+
+            return;
+        }
+
+        const gameData =
+            JSON.parse(savedGame);
+
+        alert(
+            "Saved adventure found!\n\n" +
+            "Mode: " +
+            gameData.mode +
+            "\n\n" +
+            "The full adventure system will be added later."
+        );
+    }
 );
 
 
 /* ==========================================
-   BACK
+   BACK BUTTONS
    ========================================== */
 
 newGameBackButton.addEventListener(
@@ -121,8 +154,24 @@ fateboundModeButton.addEventListener(
     "click",
     () => {
 
+        const gameData = {
+
+            mode: "Fatebound",
+
+            createdAt:
+                new Date().toISOString()
+
+        };
+
+
+        localStorage.setItem(
+            SAVE_KEY,
+            JSON.stringify(gameData)
+        );
+
+
         alert(
-            "Fatebound Mode character creation will be built next."
+            "Fatebound adventure created and saved."
         );
 
     }
@@ -137,8 +186,24 @@ classicModeButton.addEventListener(
     "click",
     () => {
 
+        const gameData = {
+
+            mode: "Classic",
+
+            createdAt:
+                new Date().toISOString()
+
+        };
+
+
+        localStorage.setItem(
+            SAVE_KEY,
+            JSON.stringify(gameData)
+        );
+
+
         alert(
-            "Classic Mode character creation will be built next."
+            "Classic adventure created and saved."
         );
 
     }
