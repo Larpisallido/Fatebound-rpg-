@@ -13,6 +13,12 @@ const screens = {
     characterCreation:
         document.getElementById("characterCreationScreen"),
 
+    statPotential:
+        document.getElementById("statPotentialScreen"),
+
+    fateDetails:
+        document.getElementById("fateDetailsScreen"),
+
     continue:
         document.getElementById("continueScreen"),
 
@@ -47,35 +53,35 @@ function showScreen(screen) {
 
 
 function showLobby() {
-
     showScreen(screens.lobby);
-
 }
 
 
 function showNewGame() {
-
     showScreen(screens.newGame);
-
 }
 
 
 function showCharacterCreation() {
-
     showScreen(screens.characterCreation);
+}
 
+
+function showStatPotential() {
+    showScreen(screens.statPotential);
+}
+
+
+function showFateDetails() {
+    showScreen(screens.fateDetails);
 }
 
 
 function showContinue() {
-
     showScreen(screens.continue);
-
 }
 
 
 function showGame() {
-
     showScreen(screens.game);
-
 }
