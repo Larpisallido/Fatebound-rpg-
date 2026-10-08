@@ -563,3 +563,65 @@ body {
 
     letter-spacing: 1px;
    }
+
+
+/* ==========================================
+   GAME SCREEN
+   ========================================== */
+
+.game-screen {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #202027 0%,
+            #111117 45%,
+            #08080c 80%
+        );
+}
+
+
+.game-content {
+    width: 90%;
+
+    max-width: 420px;
+}
+
+
+.game-content h2 {
+    font-size: 42px;
+
+    font-weight: normal;
+
+    letter-spacing: 8px;
+
+    color: #eee7da;
+}
+
+
+.game-message {
+    margin: 35px 0;
+
+    color: #969199;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+.game-content .menu-button {
+    margin-top: 5px;
+}
+
+
+.game-content .back-button {
+    margin-top: 18px;
+}
