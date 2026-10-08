@@ -816,3 +816,120 @@ body {
     }
 
 }
+
+/* ==========================================
+   FATEBOUND - STAT POTENTIAL
+   ========================================== */
+
+.completed-stats {
+
+    width: 100%;
+
+    max-width: 360px;
+
+    margin: 15px auto 20px;
+
+}
+
+
+.completed-stat {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        60px
+        60px;
+
+    align-items: center;
+
+    padding: 8px 12px;
+
+    margin: 5px 0;
+
+    border-bottom:
+        1px solid
+        rgba(212, 175, 99, 0.12);
+
+    animation:
+        statReveal 0.4s ease;
+
+}
+
+
+.completed-stat-name {
+
+    text-align: left;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 2px;
+
+    opacity: 0.75;
+
+}
+
+
+.completed-stat-roll {
+
+    text-align: center;
+
+    font-size: 1rem;
+
+    opacity: 0.8;
+
+}
+
+
+.completed-stat-grade {
+
+    text-align: right;
+
+    font-size: 1.1rem;
+
+    font-weight: 700;
+
+    color: #d4af63;
+
+}
+
+
+@keyframes statReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .completed-stats {
+
+        max-width: 330px;
+
+    }
+
+
+    .completed-stat {
+
+        padding: 7px 8px;
+
+    }
+
+}
