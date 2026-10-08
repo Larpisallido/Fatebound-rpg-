@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <title>Fatebound</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         LOBBY
+         ========================= -->
+
+    <main id="lobby" class="screen lobby">
+
+        <div class="lobby-content">
+
+            <div class="title-area">
+
+                <h1>FATEBOUND</h1>
+
+                <div class="ornament">
+                    <span></span>
+                    <i>✦</i>
+                    <span></span>
+                </div>
+
+                <p>A LIVING WORLD RPG</p>
+
+            </div>
+
+
+            <div class="menu">
+
+                <button id="newGameButton" class="menu-button">
+                    NEW GAME
+                </button>
+
+                <button id="continueButton" class="menu-button">
+                    CONTINUE
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <button id="settingsButton" class="settings-button">
+            ⚙
+            <span>SETTINGS</span>
+        </button>
+
+    </main>
+
+
+    <!-- =========================
+         NEW GAME / MODE SELECTION
+         ========================= -->
+
+    <main id="newGameScreen" class="screen secondary-screen hidden">
+
+        <div class="secondary-content">
+
+            <h2>NEW GAME</h2>
+
+            <div class="ornament">
+                <span></span>
+                <i>✦</i>
+                <span></span>
+            </div>
+
+            <p class="mode-question">
+                Choose your path.
+            </p>
+
+
+            <button id="fateboundModeButton" class="menu-button mode-button">
+
+                <strong>FATEBOUND MODE</strong>
+
+                <small>
+                    Everything is decided by Fate.
+                </small>
+
+            </button>
+
+
+            <button id="classicModeButton" class="menu-button mode-button">
+
+                <strong>CLASSIC MODE</strong>
+
+                <small>
+                    Create your own character.
+                </small>
+
+            </button>
+
+
+            <button id="newGameBackButton" class="back-button">
+                BACK
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         CONTINUE SCREEN
+         ========================= -->
+
+    <main id="continueScreen" class="screen secondary-screen hidden">
+
+        <div class="secondary-content">
+
+            <h2>CONTINUE</h2>
+
+            <div class="ornament">
+                <span></span>
+                <i>✦</i>
+                <span></span>
+            </div>
+
+            <p>
+                No saved adventures yet.
+            </p>
+
+            <button id="continueBackButton" class="back-button">
+                BACK
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
