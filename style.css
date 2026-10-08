@@ -1,4 +1,525 @@
 /* ==========================================
+   RESET
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #08080c;
+    color: #e9e3d8;
+    font-family: Georgia, "Times New Roman", serif;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+
+/* ==========================================
+   GENERAL SCREEN
+   ========================================== */
+
+.screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   LOBBY
+   ========================================== */
+
+.lobby {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #202027 0%,
+            #111117 38%,
+            #08080c 78%
+        );
+}
+
+
+/* subtle atmosphere */
+
+.lobby::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(150, 120, 70, 0.08),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   LOBBY CONTENT
+   ========================================== */
+
+.lobby-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 560px;
+
+    padding: 30px;
+
+    transform: translateY(-2%);
+}
+
+
+/* ==========================================
+   TITLE
+   ========================================== */
+
+.title-area h1 {
+    font-size: clamp(48px, 14vw, 78px);
+
+    font-weight: normal;
+
+    letter-spacing: 12px;
+
+    line-height: 1;
+
+    color: #eee7da;
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(190, 160, 100, 0.08);
+}
+
+
+.title-area p {
+    margin-top: 16px;
+
+    color: #99939a;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+}
+
+
+/* ==========================================
+   ORNAMENT
+   ========================================== */
+
+.ornament {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 22px auto 0;
+
+    width: 230px;
+}
+
+
+.ornament span {
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #806b46
+        );
+}
+
+
+.ornament span:last-child {
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            #806b46
+        );
+}
+
+
+.ornament i {
+    font-style: normal;
+
+    color: #9b8050;
+
+    font-size: 18px;
+
+    text-shadow:
+        0 0 10px rgba(170, 135, 70, 0.4);
+}
+
+
+/* ==========================================
+   MENU
+   ========================================== */
+
+.menu {
+    width: 100%;
+
+    max-width: 390px;
+
+    margin: 70px auto 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* ==========================================
+   MAIN BUTTONS
+   ========================================== */
+
+.menu-button {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 62px;
+
+    padding: 18px 20px;
+
+    border: 1px solid #806b46;
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #806c49 0%,
+            #695637 100%
+        );
+
+    color: #f4ecdf;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    font-weight: normal;
+
+    letter-spacing: 5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+    transition:
+        transform 0.12s ease,
+        filter 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+/* decorative inner border */
+
+.menu-button::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    border: 1px solid rgba(210, 180, 120, 0.18);
+
+    pointer-events: none;
+}
+
+
+/* hover */
+
+@media (hover: hover) {
+
+    .menu-button:hover {
+        filter: brightness(1.12);
+
+        box-shadow:
+            0 6px 25px rgba(0, 0, 0, 0.55),
+            0 0 18px rgba(160, 125, 65, 0.12);
+    }
+
+}
+
+
+/* actual press */
+
+.menu-button:active {
+    transform: scale(0.965) translateY(2px);
+
+    filter: brightness(0.88);
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.5),
+        inset 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================================
+   SETTINGS
+   ========================================== */
+
+.settings-button {
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #77737b;
+
+    font-family: Georgia, serif;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.15s ease;
+
+    font-size: 25px;
+}
+
+
+.settings-button span {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+
+.settings-button:hover {
+    color: #aaa39a;
+}
+
+
+.settings-button:active {
+    transform:
+        translateX(-50%)
+        scale(0.92);
+}
+
+
+/* ==========================================
+   SECONDARY SCREENS
+   ========================================== */
+
+.secondary-screen {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #202027 0%,
+            #111117 45%,
+            #08080c 80%
+        );
+}
+
+
+.secondary-content {
+    width: 90%;
+
+    max-width: 420px;
+}
+
+
+.secondary-content h2 {
+    font-size: 40px;
+
+    font-weight: normal;
+
+    letter-spacing: 7px;
+}
+
+
+.secondary-content p {
+    margin: 30px 0;
+
+    color: #969199;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   BACK BUTTON
+   ========================================== */
+
+.back-button {
+    width: 100%;
+
+    min-height: 56px;
+
+    margin-top: 14px;
+
+    border: 1px solid #4d4942;
+
+    border-radius: 4px;
+
+    background: transparent;
+
+    color: #aaa5ad;
+
+    font-family: Georgia, serif;
+
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.12s ease;
+}
+
+
+.back-button:hover {
+    background: rgba(255,255,255,0.04);
+}
+
+
+.back-button:active {
+    transform: scale(0.97);
+}
+
+
+/* ==========================================
+   HIDDEN
+   ========================================== */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 500px) {
+
+    .lobby-content {
+        padding: 25px;
+    }
+
+
+    .title-area h1 {
+        font-size: clamp(42px, 13vw, 62px);
+
+        letter-spacing: 8px;
+    }
+
+
+    .title-area p {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .ornament {
+        width: 190px;
+    }
+
+
+    .menu {
+        max-width: 360px;
+
+        margin-top: 60px;
+    }
+
+
+    .menu-button {
+        min-height: 60px;
+
+        font-size: 14px;
+
+        letter-spacing: 4px;
+    }
+
+}
+
+
+/* ==========================================
+   SHORT SCREENS
+   ========================================== */
+
+@media (max-height: 650px) {
+
+    .menu {
+        margin-top: 40px;
+    }
+
+
+    .settings-button {
+        bottom: 18px;
+    }
+
+
+    .title-area h1 {
+        font-size: 42px;
+    }
+
+}
+
+
+/* ==========================================
    MODE SELECTION
    ========================================== */
 
@@ -41,4 +562,4 @@
     font-size: 11px;
 
     letter-spacing: 1px;
-}
+   }
