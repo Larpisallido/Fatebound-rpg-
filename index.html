@@ -245,7 +245,7 @@
 
 
             <!-- =========================
-                 ROLL BUTTON
+                 ROLL ORIGIN
                  ========================= -->
 
             <button
@@ -257,7 +257,7 @@
 
 
             <!-- =========================
-                 CONTINUE
+                 CONTINUE FROM ORIGIN
                  ========================= -->
 
             <button
@@ -274,6 +274,122 @@
 
             <button
                 id="characterCreationBackButton"
+                class="back-button"
+            >
+                BACK
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         STAT POTENTIAL
+         ========================= -->
+
+    <main
+        id="statPotentialScreen"
+        class="screen secondary-screen hidden"
+    >
+
+        <div class="secondary-content">
+
+            <h2>
+                STAT POTENTIAL
+            </h2>
+
+
+            <div class="ornament">
+                <span></span>
+                <i>✦</i>
+                <span></span>
+            </div>
+
+
+            <p class="mode-question">
+                Your potential is decided by Fate.
+            </p>
+
+
+            <!-- =========================
+                 CURRENT STAT ROLL
+                 ========================= -->
+
+            <div
+                id="statRollDisplay"
+                class="origin-roll-display"
+            >
+
+                <div
+                    id="currentStatName"
+                    class="roll-label"
+                >
+                    STRENGTH
+                </div>
+
+
+                <div
+                    id="statRollNumber"
+                    class="origin-roll-number"
+                >
+                    ?
+                </div>
+
+
+                <div
+                    id="statPotentialResult"
+                    class="roll-status"
+                >
+                    Awaiting Fate...
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 COMPLETED STATS
+                 ========================= -->
+
+            <div
+                id="completedStats"
+                class="completed-stats"
+            >
+
+            </div>
+
+
+            <!-- =========================
+                 ROLL STAT
+                 ========================= -->
+
+            <button
+                id="rollStatButton"
+                class="menu-button"
+            >
+                ROLL STRENGTH
+            </button>
+
+
+            <!-- =========================
+                 CONTINUE
+                 ========================= -->
+
+            <button
+                id="statPotentialContinueButton"
+                class="menu-button hidden"
+            >
+                CONTINUE
+            </button>
+
+
+            <!-- =========================
+                 BACK
+                 ========================= -->
+
+            <button
+                id="statPotentialBackButton"
                 class="back-button"
             >
                 BACK
@@ -380,8 +496,10 @@
 
     <script src="js/characterCreation.js"></script>
 
+    <script src="js/statPotential.js"></script>
+
     <script src="js/lobby.js"></script>
 
 </body>
 
-    </html>
+</html>
