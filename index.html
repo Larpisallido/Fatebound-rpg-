@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <title>Fatebound</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         LOBBY
+         ========================= -->
+
+    <main
+        id="lobby"
+        class="screen lobby"
+    >
+
+        <div class="lobby-content">
+
+            <div class="title-area">
+
+                <h1>FATEBOUND</h1>
+
+
+                <div class="ornament">
+
+                    <span></span>
+
+                    <i>✦</i>
+
+                    <span></span>
+
+                </div>
+
+
+                <p>
+                    A LIVING WORLD RPG
+                </p>
+
+            </div>
+
+
+            <div class="menu">
+
+                <button
+                    id="newGameButton"
+                    class="menu-button"
+                >
+                    NEW GAME
+                </button>
+
+
+                <button
+                    id="continueButton"
+                    class="menu-button"
+                >
+                    CONTINUE
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="settingsButton"
+            class="settings-button"
+        >
+
+            ⚙
+
+            <span>
+                SETTINGS
+            </span>
+
+        </button>
+
+    </main>
+
+
+
+    <!-- =========================
+         NEW GAME
+         ========================= -->
+
+    <main
+        id="newGameScreen"
+        class="screen secondary-screen hidden"
+    >
+
+        <div class="secondary-content">
+
+            <h2>
+                NEW GAME
+            </h2>
+
+
+            <div class="ornament">
+
+                <span></span>
+
+                <i>✦</i>
+
+                <span></span>
+
+            </div>
+
+
+            <p class="mode-question">
+                Choose your path.
+            </p>
+
+
+            <button
+                id="fateboundModeButton"
+                class="menu-button mode-button"
+            >
+
+                <strong>
+                    FATEBOUND MODE
+                </strong>
+
+
+                <small>
+                    Everything is decided by Fate.
+                </small>
+
+            </button>
+
+
+            <button
+                id="classicModeButton"
+                class="menu-button mode-button"
+            >
+
+                <strong>
+                    CLASSIC MODE
+                </strong>
+
+
+                <small>
+                    Create your own character.
+                </small>
+
+            </button>
+
+
+            <button
+                id="newGameBackButton"
+                class="back-button"
+            >
+                BACK
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         CHARACTER CREATION
+         ========================= -->
+
+    <main
+        id="characterCreationScreen"
+        class="screen secondary-screen hidden"
+    >
+
+        <div class="secondary-content">
+
+            <h2>
+                CHARACTER CREATION
+            </h2>
+
+
+            <div class="ornament">
+
+                <span></span>
+
+                <i>✦</i>
+
+                <span></span>
+
+            </div>
+
+
+            <p class="mode-question">
+                FATEBOUND MODE
+            </p>
+
+
+            <p id="creationDescription">
+                Your beginning is decided by Fate.
+            </p>
+
+
+            <!-- ORIGIN ROLL -->
+
+            <div
+                id="originRollDisplay"
+                class="origin-roll-display hidden"
+            >
+
+                <div class="roll-label">
+                    ORIGIN
+                </div>
+
+
+                <div
+                    id="originRollNumber"
+                    class="origin-roll-number"
+                >
+                    ?
+                </div>
+
+
+                <div
+                    id="rollStatus"
+                    class="roll-status"
+                >
+                    Awaiting Fate...
+                </div>
+
+            </div>
+
+
+            <!-- ORIGIN RESULT -->
+
+            <div
+                id="originResult"
+                class="hidden"
+            >
+
+                <p>
+                    ORIGIN
+                </p>
+
+
+                <h3 id="originName">
+                    —
+                </h3>
+
+
+                <p id="originDescription">
+                    —
+                </p>
+
+
+                <p id="originSkill">
+                    —
+                </p>
+
+            </div>
+
+
+            <button
+                id="rollOriginButton"
+                class="menu-button"
+            >
+                ROLL ORIGIN
+            </button>
+
+
+            <button
+                id="originContinueButton"
+                class="menu-button hidden"
+            >
+                CONTINUE
+            </button>
+
+
+            <!-- IMPORTANT:
+                 This does NOT allow rerolling.
+                 It only abandons the current
+                 character and returns to lobby.
+            -->
+
+            <button
+                id="characterCreationLobbyButton"
+                class="back-button"
+            >
+                RETURN TO LOBBY
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         STAT POTENTIAL
+         ========================= -->
+
+    <main
+        id="statPotentialScreen"
+        class="screen secondary-screen hidden"
+    >
+
+        <div class="secondary-content">
+
+            <h2>
+                STAT POTENTIAL
+            </h2>
+
+
+            <div class="ornament">
+
+                <span></span>
+
+                <i>✦</i>
+
+                <span></span>
+
+            </div>
+
+
+            <p class="mode-question">
+                Your potential is decided by Fate.
+            </p>
+
+
+            <div
+                id="statRollDisplay"
+                class="origin-roll-display"
+            >
+
+                <div
+                    id="currentStatName"
+                    class="roll-label"
+                >
+                    STRENGTH
+                </div>
+
+
+                <div
+                    id="statRollNumber"
+                    class="origin-roll-number"
+                >
+                    ?
+                </div>
+
+
+                <div
+                    id="statPotentialResult"
+                    class="roll-status"
+                >
+                    Awaiting Fate...
+                </div>
+
+            </div>
+
+
+            <div
+                id="completedStats"
+                class="completed-stats"
+            >
+            </div>
+
+
+            <button
+                id="rollStatButton"
+                class="menu-button"
+            >
+                ROLL STRENGTH
+            </button>
+
+
+            <button
+                id="statPotentialContinueButton"
+                class="menu-button hidden"
+            >
+                CONTINUE
+            </button>
+
+
+            <button
+                id="statPotentialLobbyButton"
+                class="back-button"
+            >
+                RETURN TO LOBBY
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         AGE / APPEARANCE / LUCK
+         ========================= -->
+
+    <main
+        id="fateDetailsScreen"
+        class="screen secondary-screen hidden"
+    >
+
+        <div class="secondary-content">
+
+            <h2>
+                FATE'S DESIGN
+            </h2>
+
+
+            <div class="ornament">
+
+                <span></span>
+
+                <i>✦</i>
+
+                <span></span>
+
+            </div>
+
+
+            <p class="mode-question">
+                Some things are decided before you are born.
+            </p>
+
+
+            <div
+                id="fateDetailRollDisplay"
+                class="origin-roll-display"
+            >
+
+                <div
+                    id="fateDetailName"
+                    class="roll-label"
+                >
+                    AGE
+                </div>
+
+
+                <div
+                    id="fateDetailRollNumber"
+                    class="origin-roll-number"
+                >
+                    ?
+                </div>
+
+
+                <div
+                    id="fateDetailResult"
+                    class="roll-status"
+                >
+                    Awaiting Fate...
+                </div>
+
+            </div>
+
+
+            <div
+                id="fateDetailsResults"
+                class="fate-details-results"
+            >
+            </div>
+
+
+            <button
+                id="rollFateDetailButton"
+                class="menu-button"
+            >
+                ROLL AGE
+            </button>
+
+
+            <button
+                id="fateDetailsContinueButton"
+                class="menu-button hidden"
+            >
+                CONTINUE
+            </button>
+
+
+            <button
+                id="fateDetailsLobbyButton"
+                class="back-button"
+            >
+                RETURN TO LOBBY
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         CHARACTER STATUS
+         ========================= -->
+
+    <main
+        id="characterStatusScreen"
+        class="screen secondary-screen hidden character-status-screen"
+    >
+
+        <div class="secondary-content character-status-content">
+
+            <h2>
+                CHARACTER STATUS
+            </h2>
+
+
+            <div class="ornament">
+
+                <span></span>
+
+                <i>✦</i>
+
+                <span></span>
+
+            </div>
+
+
+            <p class="mode-question">
+                Your life has been decided. Choose your name.
+            </p>
+
+
+            <div class="character-name-section">
+
+                <label for="characterFirstName">
+                    FIRST NAME
+                </label>
+
+                <input
+                    id="characterFirstName"
+                    type="text"
+                    maxlength="24"
+                    autocomplete="off"
+                    spellcheck="false"
+                    placeholder="Enter first name"
+                >
+
+                <div
+                    id="generatedFamilyName"
+                    class="generated-family-name"
+                >
+                </div>
+
+            </div>
+
+
+            <div
+                id="characterStatusDetails"
+                class="character-status-details"
+            >
+            </div>
+
+
+            <div
+                id="characterStatusStats"
+                class="character-status-stats"
+            >
+            </div>
+
+
+            <button
+                id="characterStatusContinueButton"
+                class="menu-button"
+            >
+                CONTINUE TO WORLD
+            </button>
+
+
+            <button
+                id="characterStatusLobbyButton"
+                class="back-button"
+            >
+                RETURN TO LOBBY
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         CONTINUE
+         ========================= -->
+
+    <main
+        id="continueScreen"
+        class="screen secondary-screen hidden"
+    >
+
+        <div class="secondary-content">
+
+            <h2>
+                CONTINUE
+            </h2>
+
+
+            <div class="ornament">
+
+                <span></span>
+
+                <i>✦</i>
+
+                <span></span>
+
+            </div>
+
+
+            <p>
+                No saved adventures yet.
+            </p>
+
+
+            <button
+                id="continueBackButton"
+                class="back-button"
+            >
+                BACK
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         GAME SCREEN
+         ========================= -->
+
+    <main
+        id="gameScreen"
+        class="screen game-screen hidden"
+    >
+
+        <div class="game-content">
+
+            <h2>
+                FATEBOUND
+            </h2>
+
+
+            <div class="ornament">
+
+                <span></span>
+
+                <i>✦</i>
+
+                <span></span>
+
+            </div>
+
+
+            <p class="game-message">
+                Your adventure begins.
+            </p>
+
+
+            <button
+                id="enterWorldButton"
+                class="menu-button"
+            >
+                ENTER WORLD
+            </button>
+
+
+            <button
+                id="gameBackButton"
+                class="back-button"
+            >
+                RETURN TO LOBBY
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
+    <script src="js/navigation.js"></script>
+
+    <script src="js/saves.js"></script>
+
+    <script src="js/origins.js"></script>
+
+    <script src="js/characterCreation.js"></script>
+
+    <script src="js/statPotential.js"></script>
+
+    <script src="js/fateDetails.js"></script>
+
+    <script src="js/characterStatus.js"></script>
+
+    <script src="js/lobby.js"></script>
+
+
+</body>
+
+</html>
