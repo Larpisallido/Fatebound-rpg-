@@ -23,7 +23,10 @@ const screens = {
         document.getElementById("continueScreen"),
 
     game:
-        document.getElementById("gameScreen")
+        document.getElementById("gameScreen"),
+
+    world:
+        document.getElementById("worldScreen")
 
 };
 
@@ -84,4 +87,9 @@ function showContinue() {
 
 function showGame() {
     showScreen(screens.game);
+}
+
+
+function showWorld() {
+    showScreen(screens.world);
 }
