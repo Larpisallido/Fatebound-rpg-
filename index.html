@@ -42,11 +42,18 @@
 
             <div class="menu">
 
-                <button id="newGameButton" class="menu-button">
+                <button
+                    id="newGameButton"
+                    class="menu-button"
+                >
                     NEW GAME
                 </button>
 
-                <button id="continueButton" class="menu-button">
+
+                <button
+                    id="continueButton"
+                    class="menu-button"
+                >
                     CONTINUE
                 </button>
 
@@ -55,7 +62,10 @@
         </div>
 
 
-        <button id="settingsButton" class="settings-button">
+        <button
+            id="settingsButton"
+            class="settings-button"
+        >
 
             ⚙
 
@@ -82,10 +92,15 @@
 
             <h2>NEW GAME</h2>
 
+
             <div class="ornament">
+
                 <span></span>
+
                 <i>✦</i>
+
                 <span></span>
+
             </div>
 
 
@@ -93,6 +108,8 @@
                 Choose your path.
             </p>
 
+
+            <!-- FATEBOUND MODE -->
 
             <button
                 id="fateboundModeButton"
@@ -109,6 +126,8 @@
 
             </button>
 
+
+            <!-- CLASSIC MODE -->
 
             <button
                 id="classicModeButton"
@@ -150,12 +169,19 @@
 
         <div class="secondary-content">
 
-            <h2>CHARACTER CREATION</h2>
+            <h2>
+                CHARACTER CREATION
+            </h2>
+
 
             <div class="ornament">
+
                 <span></span>
+
                 <i>✦</i>
+
                 <span></span>
+
             </div>
 
 
@@ -169,21 +195,29 @@
             </p>
 
 
-            <!-- ORIGIN RESULT -->
+            <!-- =========================
+                 ORIGIN RESULT
+                 ========================= -->
 
-            <div id="originResult" class="hidden">
+            <div
+                id="originResult"
+                class="hidden"
+            >
 
                 <p>
                     ORIGIN
                 </p>
 
+
                 <h3 id="originName">
                     —
                 </h3>
 
+
                 <p id="originDescription">
                     —
                 </p>
+
 
                 <p id="originSkill">
                     —
@@ -192,7 +226,9 @@
             </div>
 
 
-            <!-- ROLL BUTTON -->
+            <!-- =========================
+                 ROLL ORIGIN
+                 ========================= -->
 
             <button
                 id="rollOriginButton"
@@ -202,7 +238,9 @@
             </button>
 
 
-            <!-- CONTINUE -->
+            <!-- =========================
+                 CONTINUE
+                 ========================= -->
 
             <button
                 id="originContinueButton"
@@ -211,6 +249,10 @@
                 CONTINUE
             </button>
 
+
+            <!-- =========================
+                 BACK
+                 ========================= -->
 
             <button
                 id="characterCreationBackButton"
@@ -236,12 +278,19 @@
 
         <div class="secondary-content">
 
-            <h2>CONTINUE</h2>
+            <h2>
+                CONTINUE
+            </h2>
+
 
             <div class="ornament">
+
                 <span></span>
+
                 <i>✦</i>
+
                 <span></span>
+
             </div>
 
 
@@ -264,7 +313,7 @@
 
 
     <!-- =========================
-         GAME SCREEN
+         GAME / WORLD SCREEN
          ========================= -->
 
     <main
@@ -280,9 +329,13 @@
 
 
             <div class="ornament">
+
                 <span></span>
+
                 <i>✦</i>
+
                 <span></span>
+
             </div>
 
 
@@ -316,8 +369,16 @@
          JAVASCRIPT
          ========================= -->
 
-    <script src="script.js"></script>
+    <script src="js/navigation.js"></script>
+
+    <script src="js/saves.js"></script>
+
+    <script src="js/origins.js"></script>
+
+    <script src="js/characterCreation.js"></script>
+
+    <script src="js/lobby.js"></script>
 
 </body>
 
-</html>
+    </html>
