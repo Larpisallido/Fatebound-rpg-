@@ -74,9 +74,9 @@ const fateDetailsContinueButton =
     );
 
 
-const fateDetailsBackButton =
+const fateDetailsLobbyButton =
     document.getElementById(
-        "fateDetailsBackButton"
+        "fateDetailsLobbyButton"
     );
 
 
@@ -109,33 +109,23 @@ function getAgeFromRoll(roll) {
 function getAppearanceFromRoll(roll) {
 
     if (roll <= 2) {
-
         return "Unfortunate Looking";
-
     }
 
     if (roll <= 4) {
-
         return "Unpleasant";
-
     }
 
     if (roll === 5) {
-
         return "Average";
-
     }
 
     if (roll <= 7) {
-
         return "Decently Handsome";
-
     }
 
     if (roll <= 9) {
-
         return "Strikingly Attractive";
-
     }
 
     return "🗿";
@@ -157,17 +147,13 @@ function resetFateDetails() {
 
 
     if (fateDetailName) {
-
-        fateDetailName.textContent =
-            "AGE";
-
+        fateDetailName.textContent = "AGE";
     }
 
 
     if (fateDetailRollNumber) {
 
-        fateDetailRollNumber.textContent =
-            "?";
+        fateDetailRollNumber.textContent = "?";
 
         fateDetailRollNumber.classList.remove(
             "origin-final"
@@ -186,8 +172,7 @@ function resetFateDetails() {
 
     if (fateDetailsResults) {
 
-        fateDetailsResults.innerHTML =
-            "";
+        fateDetailsResults.innerHTML = "";
 
     }
 
@@ -198,8 +183,7 @@ function resetFateDetails() {
             "hidden"
         );
 
-        rollFateDetailButton.disabled =
-            false;
+        rollFateDetailButton.disabled = false;
 
         rollFateDetailButton.classList.remove(
             "rolling-button"
@@ -250,9 +234,7 @@ if (rollFateDetailButton) {
         () => {
 
             if (fateDetailRolling) {
-
                 return;
-
             }
 
 
@@ -302,14 +284,11 @@ if (rollFateDetailButton) {
 
 
             /*
-             * IMPORTANT:
+             * Generate the real result
+             * independently.
              *
-             * The real result is generated
-             * independently of the animation.
-             *
-             * For Luck, this value is NEVER
-             * placed into the visible roll
-             * display.
+             * For Luck, it is NEVER
+             * displayed.
              */
 
             const realRoll =
@@ -368,11 +347,11 @@ if (rollFateDetailButton) {
                     ) {
 
                         /*
-                         * Luck deliberately uses
-                         * fake animation numbers.
+                         * These are purely
+                         * visual numbers.
                          *
-                         * They have NO relationship
-                         * to the real Luck roll.
+                         * They are never used
+                         * as the actual result.
                          */
 
                         const visualRoll =
@@ -394,7 +373,6 @@ if (rollFateDetailButton) {
                     requestAnimationFrame(
                         animateRoll
                     );
-
 
                 } else {
 
@@ -427,20 +405,23 @@ function finishFateDetail(
     realRoll
 ) {
 
-    /*
-     * =====================================
-     * HIDDEN LUCK
-     * =====================================
-     */
+    /* =========================
+       HIDDEN LUCK
+       ========================= */
 
     if (detail.hidden) {
 
         /*
-         * NEVER display the real roll.
+         * Never show the real roll.
          */
 
         fateDetailRollNumber.textContent =
             "—";
+
+
+        fateDetailRollNumber.classList.add(
+            "origin-final"
+        );
 
 
         fateDetailResult.textContent =
@@ -448,26 +429,18 @@ function finishFateDetail(
 
 
         /*
-         * Store the actual Luck internally.
+         * Store the actual hidden value.
          */
 
         fateDetailData.luck =
             realRoll;
 
-
-        /*
-         * No visible result is added
-         * to the revealed-results area.
-         */
-
     }
 
 
-    /*
-     * =====================================
-     * VISIBLE RESULTS
-     * =====================================
-     */
+    /* =========================
+       VISIBLE RESULTS
+       ========================= */
 
     else {
 
@@ -538,9 +511,9 @@ function finishFateDetail(
             fateDetailRolling = false;
 
 
-            /*
-             * Finished all three.
-             */
+            /* =========================
+               ALL COMPLETE
+               ========================= */
 
             if (
                 fateDetailIndex >=
@@ -563,15 +536,14 @@ function finishFateDetail(
 
                 saveFateDetails();
 
-
                 return;
 
             }
 
 
-            /*
-             * Prepare next roll.
-             */
+            /* =========================
+               NEXT DETAIL
+               ========================= */
 
             const nextDetail =
                 fateDetails[
@@ -616,7 +588,7 @@ function finishFateDetail(
 
 
 /* ==========================================
-   VISIBLE RESULT LIST
+   VISIBLE RESULT
    ========================================== */
 
 function addFateDetailResult(
@@ -626,16 +598,12 @@ function addFateDetailResult(
 ) {
 
     if (!fateDetailsResults) {
-
         return;
-
     }
 
 
     const row =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
 
     row.className =
@@ -673,15 +641,9 @@ function addFateDetailResult(
 function saveFateDetails() {
 
     if (!currentCharacter) {
-
         return;
-
     }
 
-
-    /*
-     * Visible data.
-     */
 
     if (fateDetailData.age) {
 
@@ -700,10 +662,8 @@ function saveFateDetails() {
 
 
     /*
-     * Hidden Luck.
-     *
-     * It is stored in the save but never
-     * displayed through the character UI.
+     * Luck remains hidden from
+     * the character UI.
      */
 
     if (
@@ -734,6 +694,21 @@ if (fateDetailsContinueButton) {
         "click",
         () => {
 
+            if (fateDetailRolling) {
+                return;
+            }
+
+
+            if (
+                fateDetailIndex <
+                fateDetails.length
+            ) {
+
+                return;
+
+            }
+
+
             alert(
                 "Age, appearance and luck complete. Initial stats are next."
             );
@@ -745,25 +720,27 @@ if (fateDetailsContinueButton) {
 
 
 /* ==========================================
-   BACK
+   RETURN TO LOBBY
    ========================================== */
 
-if (fateDetailsBackButton) {
+if (fateDetailsLobbyButton) {
 
-    fateDetailsBackButton.addEventListener(
+    fateDetailsLobbyButton.addEventListener(
         "click",
         () => {
 
             if (fateDetailRolling) {
-
                 return;
-
             }
 
 
             resetFateDetails();
 
-            startStatPotential();
+            resetStatPotential();
+
+            resetCharacterCreation();
+
+            showLobby();
 
         }
     );
