@@ -1,4 +1,3 @@
-
 /* ==========================================
    FATEBOUND - WORLD
    ========================================== */
@@ -29,7 +28,6 @@ const currentScenario = {
                 "You approach the wounded traveler carefully. He looks up at you with exhausted eyes and reaches toward you. \"Please... help me.\" You notice that his wounds appear to have come from something far more dangerous than a simple robbery."
         },
 
-
         {
             text: "SEARCH THE CART",
 
@@ -37,14 +35,12 @@ const currentScenario = {
                 "You ignore the traveler for a moment and inspect the broken cart. Most of its contents have been scattered across the road. Beneath a torn cloth, you discover an unfamiliar metal insignia."
         },
 
-
         {
             text: "INVESTIGATE THE FOREST",
 
             result:
                 "You turn your attention toward the forest. The movement stops immediately. For a moment everything is completely silent. Then you hear a branch snap somewhere deep among the trees."
         },
-
 
         {
             text: "WALK PAST",
@@ -63,57 +59,39 @@ const currentScenario = {
    ========================================== */
 
 const worldLocation =
-    document.getElementById(
-        "worldLocation"
-    );
+    document.getElementById("worldLocation");
 
 
 const worldTime =
-    document.getElementById(
-        "worldTime"
-    );
+    document.getElementById("worldTime");
 
 
 const worldDescription =
-    document.getElementById(
-        "worldDescription"
-    );
+    document.getElementById("worldDescription");
 
 
 const worldSituation =
-    document.getElementById(
-        "worldSituation"
-    );
+    document.getElementById("worldSituation");
 
 
 const worldChoices =
-    document.getElementById(
-        "worldChoices"
-    );
+    document.getElementById("worldChoices");
 
 
 const worldResult =
-    document.getElementById(
-        "worldResult"
-    );
+    document.getElementById("worldResult");
 
 
 const worldResultText =
-    document.getElementById(
-        "worldResultText"
-    );
+    document.getElementById("worldResultText");
 
 
 const worldEndMessage =
-    document.getElementById(
-        "worldEndMessage"
-    );
+    document.getElementById("worldEndMessage");
 
 
 const worldLobbyButton =
-    document.getElementById(
-        "worldLobbyButton"
-    );
+    document.getElementById("worldLobbyButton");
 
 
 /* ==========================================
@@ -132,23 +110,27 @@ function startWorld() {
     worldTurnCompleted = false;
 
 
+    /* =========================
+       RESET RESULT
+       ========================= */
+
     if (worldResult) {
 
-        worldResult.classList.add(
-            "hidden"
-        );
+        worldResult.classList.add("hidden");
 
     }
 
 
     if (worldEndMessage) {
 
-        worldEndMessage.classList.add(
-            "hidden"
-        );
+        worldEndMessage.classList.add("hidden");
 
     }
 
+
+    /* =========================
+       CLEAR OLD CHOICES
+       ========================= */
 
     if (worldChoices) {
 
@@ -156,6 +138,10 @@ function startWorld() {
 
     }
 
+
+    /* =========================
+       LOAD SCENARIO
+       ========================= */
 
     if (worldLocation) {
 
@@ -189,29 +175,18 @@ function startWorld() {
     }
 
 
+    /* =========================
+       CREATE CHOICES
+       ========================= */
+
     createWorldChoices();
 
 
+    /* =========================
+       SHOW WORLD
+       ========================= */
+
     showWorld();
-
-}
-
-
-/* ==========================================
-   SHOW WORLD
-   ========================================== */
-
-function showWorld() {
-
-    const worldScreen =
-        document.getElementById(
-            "worldScreen"
-        );
-
-
-    showScreen(
-        worldScreen
-    );
 
 }
 
@@ -231,9 +206,7 @@ function createWorldChoices() {
         (choice, index) => {
 
             const button =
-                document.createElement(
-                    "button"
-                );
+                document.createElement("button");
 
 
             button.className =
@@ -248,17 +221,13 @@ function createWorldChoices() {
                 "click",
                 () => {
 
-                    chooseWorldAction(
-                        index
-                    );
+                    chooseWorldAction(index);
 
                 }
             );
 
 
-            worldChoices.appendChild(
-                button
-            );
+            worldChoices.appendChild(button);
 
         }
     );
@@ -294,9 +263,7 @@ function chooseWorldAction(index) {
        ========================= */
 
     const buttons =
-        worldChoices.querySelectorAll(
-            "button"
-        );
+        worldChoices.querySelectorAll("button");
 
 
     buttons.forEach(
@@ -322,9 +289,7 @@ function chooseWorldAction(index) {
 
     if (worldResult) {
 
-        worldResult.classList.remove(
-            "hidden"
-        );
+        worldResult.classList.remove("hidden");
 
     }
 
@@ -338,9 +303,7 @@ function chooseWorldAction(index) {
         worldEndMessage.textContent =
             "THE TURN HAS ENDED.";
 
-        worldEndMessage.classList.remove(
-            "hidden"
-        );
+        worldEndMessage.classList.remove("hidden");
 
     }
 
