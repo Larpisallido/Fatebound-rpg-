@@ -34,9 +34,9 @@ const originRollNumber =
 const rollStatus =
     document.getElementById("rollStatus");
 
-const characterCreationBackButton =
+const characterCreationLobbyButton =
     document.getElementById(
-        "characterCreationBackButton"
+        "characterCreationLobbyButton"
     );
 
 
@@ -60,12 +60,14 @@ function resetCharacterCreation() {
     rolling = false;
 
 
-    if (originResult)
+    if (originResult) {
         originResult.classList.add("hidden");
+    }
 
 
-    if (originRollDisplay)
+    if (originRollDisplay) {
         originRollDisplay.classList.add("hidden");
+    }
 
 
     if (rollOriginButton) {
@@ -74,19 +76,32 @@ function resetCharacterCreation() {
 
         rollOriginButton.disabled = false;
 
+        rollOriginButton.classList.remove(
+            "rolling-button"
+        );
+
     }
 
 
-    if (originContinueButton)
+    if (originContinueButton) {
         originContinueButton.classList.add("hidden");
+    }
 
 
-    if (originRollNumber)
+    if (originRollNumber) {
+
         originRollNumber.textContent = "?";
 
+        originRollNumber.classList.remove(
+            "origin-final"
+        );
 
-    if (rollStatus)
+    }
+
+
+    if (rollStatus) {
         rollStatus.textContent = "Awaiting Fate...";
+    }
 
 }
 
@@ -128,14 +143,18 @@ if (rollOriginButton) {
 
             originResult.classList.add("hidden");
 
-            originContinueButton.classList.add("hidden");
+            originContinueButton.classList.add(
+                "hidden"
+            );
 
 
             /* =========================
                SHOW ROLL DISPLAY
                ========================= */
 
-            originRollDisplay.classList.remove("hidden");
+            originRollDisplay.classList.remove(
+                "hidden"
+            );
 
 
             rollOriginButton.disabled = true;
@@ -153,8 +172,7 @@ if (rollOriginButton) {
                DETERMINE REAL RESULT
                ========================= */
 
-            const result =
-                rollOrigin();
+            const result = rollOrigin();
 
 
             /* =========================
@@ -163,7 +181,8 @@ if (rollOriginButton) {
 
             const duration = 2400;
 
-            const startTime = performance.now();
+            const startTime =
+                performance.now();
 
             let lastNumber = 0;
 
@@ -185,29 +204,15 @@ if (rollOriginButton) {
                     );
 
 
-                /*
-                 * Ease-out curve.
-                 *
-                 * At the beginning:
-                 * numbers change rapidly.
-                 *
-                 * Near the end:
-                 * numbers slow down.
-                 */
-
                 const eased =
-                    1 - Math.pow(
+                    1 -
+                    Math.pow(
                         1 - progress,
                         3
                     );
 
 
                 if (progress < 1) {
-
-                    /*
-                     * Rolling speed decreases
-                     * as the animation progresses.
-                     */
 
                     const speed =
                         Math.max(
@@ -221,7 +226,8 @@ if (rollOriginButton) {
 
 
                     if (
-                        now - lastNumber >= speed
+                        now - lastNumber >=
+                        speed
                     ) {
 
                         const randomNumber =
@@ -243,12 +249,7 @@ if (rollOriginButton) {
                         animateRoll
                     );
 
-
                 } else {
-
-                    /* =====================
-                       FINAL NUMBER
-                       ===================== */
 
                     originRollNumber.textContent =
                         result.roll;
@@ -262,11 +263,6 @@ if (rollOriginButton) {
                     rollStatus.textContent =
                         "Fate has spoken.";
 
-
-                    /*
-                     * Small delay before
-                     * revealing the origin.
-                     */
 
                     setTimeout(
                         () => {
@@ -320,10 +316,6 @@ function revealOrigin(result) {
     };
 
 
-    /* =========================
-       DISPLAY ORIGIN
-       ========================= */
-
     originName.textContent =
         `${result.roll} — ${result.name}`;
 
@@ -347,18 +339,10 @@ function revealOrigin(result) {
     }
 
 
-    /* =========================
-       SHOW RESULT
-       ========================= */
-
     originResult.classList.remove(
         "hidden"
     );
 
-
-    /* =========================
-       BUTTONS
-       ========================= */
 
     rollOriginButton.classList.add(
         "hidden"
@@ -370,12 +354,7 @@ function revealOrigin(result) {
     );
 
 
-    /* =========================
-       SAVE
-       ========================= */
-
     saveGame(currentCharacter);
-
 
     rolling = false;
 
@@ -383,7 +362,7 @@ function revealOrigin(result) {
 
 
 /* ==========================================
-   CONTINUE FROM ORIGIN
+   CONTINUE TO STAT POTENTIAL
    ========================================== */
 
 if (originContinueButton) {
@@ -391,6 +370,11 @@ if (originContinueButton) {
     originContinueButton.addEventListener(
         "click",
         () => {
+
+            if (rolling) {
+                return;
+            }
+
 
             startStatPotential();
 
@@ -401,12 +385,12 @@ if (originContinueButton) {
 
 
 /* ==========================================
-   BACK
+   RETURN TO LOBBY
    ========================================== */
 
-if (characterCreationBackButton) {
+if (characterCreationLobbyButton) {
 
-    characterCreationBackButton.addEventListener(
+    characterCreationLobbyButton.addEventListener(
         "click",
         () => {
 
@@ -417,9 +401,9 @@ if (characterCreationBackButton) {
 
             resetCharacterCreation();
 
-            showNewGame();
+            showLobby();
 
         }
     );
 
-       }
+}
