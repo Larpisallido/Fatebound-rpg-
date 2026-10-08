@@ -625,3 +625,194 @@ body {
 .game-content .back-button {
     margin-top: 18px;
 }
+
+
+/* ==========================================
+   FATEBOUND - ORIGIN DICE ROLL
+   ========================================== */
+
+.origin-roll-display {
+
+    margin: 25px auto;
+
+    text-align: center;
+
+    min-height: 180px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.roll-label {
+
+    font-size: 0.85rem;
+
+    letter-spacing: 4px;
+
+    opacity: 0.75;
+
+    margin-bottom: 8px;
+
+}
+
+
+.origin-roll-number {
+
+    font-size: clamp(4rem, 18vw, 7rem);
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    color: #d4af63;
+
+    text-shadow:
+        0 0 12px rgba(212, 175, 99, 0.25);
+
+    min-width: 150px;
+
+    transition:
+        transform 0.15s ease,
+        text-shadow 0.2s ease;
+
+}
+
+
+.origin-roll-number.origin-final {
+
+    animation:
+        originRollLand 0.55s ease forwards;
+
+}
+
+
+.roll-status {
+
+    margin-top: 14px;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 2px;
+
+    opacity: 0.7;
+
+}
+
+
+.rolling-button {
+
+    opacity: 0.45;
+
+    cursor: default;
+
+}
+
+
+.menu-button:disabled {
+
+    pointer-events: none;
+
+}
+
+
+/* ==========================================
+   FINAL ROLL ANIMATION
+   ========================================== */
+
+@keyframes originRollLand {
+
+    0% {
+
+        transform: scale(1.35);
+
+        text-shadow:
+            0 0 30px rgba(212, 175, 99, 0.8);
+
+    }
+
+    45% {
+
+        transform: scale(0.9);
+
+    }
+
+    70% {
+
+        transform: scale(1.08);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+        text-shadow:
+            0 0 18px rgba(212, 175, 99, 0.35);
+
+    }
+
+}
+
+
+/* ==========================================
+   RESULT APPEARANCE
+   ========================================== */
+
+#originResult {
+
+    animation:
+        originReveal 0.5s ease;
+
+}
+
+
+@keyframes originReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 480px) {
+
+    .origin-roll-display {
+
+        margin: 18px auto;
+
+        min-height: 150px;
+
+    }
+
+
+    .origin-roll-number {
+
+        font-size: 5rem;
+
+    }
+
+}
