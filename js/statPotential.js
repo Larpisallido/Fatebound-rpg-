@@ -22,10 +22,15 @@ const potentialStats = [
 const potentialNames = {
 
     STR: "STRENGTH",
+
     DEX: "DEXTERITY",
+
     CON: "CONSTITUTION",
+
     INT: "INTELLIGENCE",
+
     WIS: "WISDOM",
+
     CHA: "CHARISMA"
 
 };
@@ -110,9 +115,9 @@ const statPotentialContinueButton =
     );
 
 
-const statPotentialBackButton =
+const statPotentialLobbyButton =
     document.getElementById(
-        "statPotentialBackButton"
+        "statPotentialLobbyButton"
     );
 
 
@@ -143,7 +148,7 @@ function resetStatPotential() {
     if (currentStatName) {
 
         currentStatName.textContent =
-            potentialNames.STR;
+            "STRENGTH";
 
     }
 
@@ -204,7 +209,7 @@ function resetStatPotential() {
 
 
 /* ==========================================
-   START STAT POTENTIAL
+   START
    ========================================== */
 
 function startStatPotential() {
@@ -239,16 +244,14 @@ if (rollStatButton) {
                 currentStatIndex >=
                 potentialStats.length
             ) {
+
                 return;
+
             }
 
 
             statRolling = true;
 
-
-            /* =========================
-               CURRENT STAT
-               ========================= */
 
             const stat =
                 potentialStats[
@@ -281,7 +284,7 @@ if (rollStatButton) {
 
 
             /* =========================
-               DETERMINE RESULT
+               REAL RESULT
                ========================= */
 
             const roll =
@@ -366,12 +369,7 @@ if (rollStatButton) {
                         animateRoll
                     );
 
-
                 } else {
-
-                    /* =====================
-                       FINAL NUMBER
-                       ===================== */
 
                     statRollNumber.textContent =
                         roll;
@@ -386,10 +384,6 @@ if (rollStatButton) {
                         `${grade} POTENTIAL`;
 
 
-                    /*
-                     * Store the result.
-                     */
-
                     statPotentials[stat] = {
 
                         roll: roll,
@@ -398,11 +392,6 @@ if (rollStatButton) {
 
                     };
 
-
-                    /*
-                     * Small delay before
-                     * moving to the next stat.
-                     */
 
                     setTimeout(
                         () => {
@@ -448,9 +437,9 @@ function finishStatRoll(stat) {
     statRolling = false;
 
 
-    /*
-     * All six stats completed.
-     */
+    /* =========================
+       ALL SIX COMPLETE
+       ========================= */
 
     if (
         currentStatIndex >=
@@ -479,9 +468,9 @@ function finishStatRoll(stat) {
     }
 
 
-    /*
-     * Prepare next stat.
-     */
+    /* =========================
+       NEXT STAT
+       ========================= */
 
     const nextStat =
         potentialStats[
@@ -566,7 +555,7 @@ function addCompletedStat(
 
 
 /* ==========================================
-   SAVE POTENTIALS
+   SAVE
    ========================================== */
 
 function saveStatPotentials() {
@@ -588,7 +577,7 @@ function saveStatPotentials() {
 
 
 /* ==========================================
-   CONTINUE
+   CONTINUE TO FATE'S DESIGN
    ========================================== */
 
 if (statPotentialContinueButton) {
@@ -596,6 +585,24 @@ if (statPotentialContinueButton) {
     statPotentialContinueButton.addEventListener(
         "click",
         () => {
+
+            if (statRolling) {
+                return;
+            }
+
+
+            if (
+                currentStatIndex <
+                potentialStats.length
+            ) {
+
+                return;
+            }
+
+
+            /*
+             * Directly start the next screen.
+             */
 
             startFateDetails();
 
@@ -606,12 +613,12 @@ if (statPotentialContinueButton) {
 
 
 /* ==========================================
-   BACK
+   RETURN TO LOBBY
    ========================================== */
 
-if (statPotentialBackButton) {
+if (statPotentialLobbyButton) {
 
-    statPotentialBackButton.addEventListener(
+    statPotentialLobbyButton.addEventListener(
         "click",
         () => {
 
@@ -622,9 +629,11 @@ if (statPotentialBackButton) {
 
             resetStatPotential();
 
-            showCharacterCreation();
+            resetCharacterCreation();
+
+            showLobby();
 
         }
     );
 
-}
+           }
