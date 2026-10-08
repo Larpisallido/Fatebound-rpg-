@@ -232,11 +232,6 @@ function rollOriginBaseStats(originRoll) {
     });
 
 
-    /*
-     * Exactly two random core stats receive
-     * the higher value for the origin tier.
-     */
-
     const shuffled = [...statusStats];
 
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -425,6 +420,7 @@ function startSpecialCharacterStatus() {
 
 
     currentCharacter.special = true;
+
     currentCharacter.age = {
         roll: null,
         result: 16
@@ -502,27 +498,41 @@ function renderNormalStatus() {
 
         <div class="status-detail-row">
             <span>ORIGIN</span>
-            <strong>${currentCharacter.originRoll} — ${currentCharacter.origin}</strong>
+            <strong>
+                ${currentCharacter.originRoll}
+                —
+                ${currentCharacter.origin}
+            </strong>
         </div>
 
         <div class="status-detail-row">
             <span>AGE</span>
-            <strong>${currentCharacter.age.result}</strong>
+            <strong>
+                ${currentCharacter.age.result}
+            </strong>
         </div>
 
         <div class="status-detail-row">
             <span>APPEARANCE</span>
-            <strong>${currentCharacter.appearance.result}</strong>
+            <strong>
+                ${currentCharacter.appearance.result}
+            </strong>
         </div>
 
         <div class="status-detail-row">
             <span>STARTING SKILL</span>
-            <strong>${currentCharacter.skill} Lv.${currentCharacter.skillLevel}</strong>
+            <strong>
+                ${currentCharacter.skill}
+                Lv.${currentCharacter.skillLevel}
+            </strong>
         </div>
 
         <div class="status-detail-row">
             <span>AGE MODIFIER</span>
-            <strong>+${formatStatValue(currentCharacter.ageModifier)} ALL STATS</strong>
+            <strong>
+                +${formatStatValue(currentCharacter.ageModifier)}
+                ALL STATS
+            </strong>
         </div>
 
     `;
@@ -543,8 +553,10 @@ function renderNormalStatus() {
 function renderSpecialStatus() {
 
     if (generatedFamilyName) {
+
         generatedFamilyName.textContent =
             "SPECIAL ORIGIN — NO FAMILY NAME";
+
     }
 
 
@@ -552,17 +564,23 @@ function renderSpecialStatus() {
 
         <div class="status-detail-row">
             <span>ORIGIN</span>
-            <strong>100 — UNKNOWN</strong>
+            <strong>
+                100 — UNKNOWN
+            </strong>
         </div>
 
         <div class="status-detail-row">
             <span>AGE</span>
-            <strong>16</strong>
+            <strong>
+                16
+            </strong>
         </div>
 
         <div class="status-detail-row">
             <span>STARTING SKILL</span>
-            <strong>None</strong>
+            <strong>
+                None
+            </strong>
         </div>
 
     `;
@@ -684,7 +702,7 @@ function updateCharacterName() {
 
 
 /* ==========================================
-   CONTINUE
+   CONTINUE TO WORLD
    ========================================== */
 
 if (characterStatusContinueButton) {
@@ -712,6 +730,7 @@ if (characterStatusContinueButton) {
 
             saveGame(currentCharacter);
 
+
             startWorld();
 
         }
@@ -731,8 +750,11 @@ if (characterStatusLobbyButton) {
         () => {
 
             resetCharacterStatus();
+
             resetFateDetails();
+
             resetStatPotential();
+
             resetCharacterCreation();
 
             showLobby();
@@ -742,6 +764,10 @@ if (characterStatusLobbyButton) {
 
 }
 
+
+/* ==========================================
+   NAME INPUT
+   ========================================== */
 
 if (characterFirstName) {
 
