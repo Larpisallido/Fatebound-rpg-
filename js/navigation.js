@@ -19,17 +19,24 @@ const screens = {
     fateDetails:
         document.getElementById("fateDetailsScreen"),
 
+    characterStatus:
+        document.getElementById("characterStatusScreen"),
+
+    world:
+        document.getElementById("worldScreen"),
+
     continue:
         document.getElementById("continueScreen"),
 
     game:
-        document.getElementById("gameScreen"),
-
-    world:
-        document.getElementById("worldScreen")
+        document.getElementById("gameScreen")
 
 };
 
+
+/* ==========================================
+   HIDE ALL SCREENS
+   ========================================== */
 
 function hideAllScreens() {
 
@@ -44,6 +51,10 @@ function hideAllScreens() {
 }
 
 
+/* ==========================================
+   SHOW SCREEN
+   ========================================== */
+
 function showScreen(screen) {
 
     hideAllScreens();
@@ -54,6 +65,10 @@ function showScreen(screen) {
 
 }
 
+
+/* ==========================================
+   NAVIGATION FUNCTIONS
+   ========================================== */
 
 function showLobby() {
     showScreen(screens.lobby);
@@ -80,6 +95,16 @@ function showFateDetails() {
 }
 
 
+function showCharacterStatus() {
+    showScreen(screens.characterStatus);
+}
+
+
+function showWorld() {
+    showScreen(screens.world);
+}
+
+
 function showContinue() {
     showScreen(screens.continue);
 }
@@ -87,9 +112,4 @@ function showContinue() {
 
 function showGame() {
     showScreen(screens.game);
-}
-
-
-function showWorld() {
-    showScreen(screens.world);
 }
