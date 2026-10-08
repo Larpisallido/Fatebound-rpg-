@@ -287,12 +287,6 @@
             </button>
 
 
-            <!-- IMPORTANT:
-                 This does NOT allow rerolling.
-                 It only abandons the current
-                 character and returns to lobby.
-            -->
-
             <button
                 id="characterCreationLobbyButton"
                 class="back-button"
@@ -594,6 +588,111 @@
     </main>
 
 
+
+    <!-- =========================
+         WORLD
+         ========================= -->
+
+    <main
+        id="worldScreen"
+        class="screen secondary-screen hidden world-screen"
+    >
+
+        <div class="secondary-content world-content">
+
+            <h2>
+                FATEBOUND
+            </h2>
+
+
+            <div class="ornament">
+
+                <span></span>
+
+                <i>✦</i>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="world-location">
+
+                <h3 id="worldLocation">
+                    THE OLD ROAD
+                </h3>
+
+                <p id="worldTime">
+                    Late Afternoon
+                </p>
+
+            </div>
+
+
+            <div class="world-story">
+
+                <p id="worldDescription">
+                    Your adventure begins.
+                </p>
+
+
+                <p id="worldSituation">
+                    Something is happening...
+                </p>
+
+            </div>
+
+
+            <div
+                id="worldChoices"
+                class="world-choices"
+            >
+            </div>
+
+
+            <div
+                id="worldResult"
+                class="world-result hidden"
+            >
+
+                <div class="ornament">
+
+                    <span></span>
+
+                    <i>✦</i>
+
+                    <span></span>
+
+                </div>
+
+
+                <p id="worldResultText">
+                </p>
+
+            </div>
+
+
+            <p
+                id="worldEndMessage"
+                class="world-end-message hidden"
+            >
+                THE TURN HAS ENDED.
+            </p>
+
+
+            <button
+                id="worldLobbyButton"
+                class="back-button"
+            >
+                RETURN TO LOBBY
+            </button>
+
+        </div>
+
+    </main>
+
+
+
     <!-- =========================
          CONTINUE
          ========================= -->
@@ -709,6 +808,8 @@
     <script src="js/fateDetails.js"></script>
 
     <script src="js/characterStatus.js"></script>
+
+    <script src="js/world.js"></script>
 
     <script src="js/lobby.js"></script>
 
