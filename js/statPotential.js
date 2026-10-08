@@ -597,14 +597,7 @@ if (statPotentialContinueButton) {
         "click",
         () => {
 
-            /*
-             * AGE GENERATION WILL BE
-             * THE NEXT FEATURE.
-             */
-
-            alert(
-                "Stat potential complete. Age generation is the next feature."
-            );
+            startFateDetails();
 
         }
     );
