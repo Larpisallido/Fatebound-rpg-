@@ -581,34 +581,22 @@ function saveStatPotentials() {
    ========================================== */
 
 if (statPotentialContinueButton) {
-
     statPotentialContinueButton.addEventListener(
         "click",
         () => {
 
-            if (statRolling) {
-                return;
-            }
-
+            if (statRolling) return;
 
             if (
                 currentStatIndex <
                 potentialStats.length
             ) {
-
                 return;
             }
 
-
-            /*
-             * Directly start the next screen.
-             */
-
-            startFateDetails();
-
+            showFateDetails();
         }
     );
-
 }
 
 
