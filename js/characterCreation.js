@@ -392,14 +392,7 @@ if (originContinueButton) {
         "click",
         () => {
 
-            /*
-             * AGE GENERATION WILL BE
-             * THE NEXT FEATURE.
-             */
-
-            alert(
-                "Origin complete. Age generation is the next feature."
-            );
+            startStatPotential();
 
         }
     );
