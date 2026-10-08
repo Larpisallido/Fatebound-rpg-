@@ -211,15 +211,8 @@ function resetFateDetails() {
    ========================================== */
 
 function startFateDetails() {
-
     resetFateDetails();
-
-    showScreen(
-        document.getElementById(
-            "fateDetailsScreen"
-        )
-    );
-
+    showFateDetails();
 }
 
 
