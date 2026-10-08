@@ -16,6 +16,9 @@ const newGameScreen =
 const continueScreen =
     document.getElementById("continueScreen");
 
+const gameScreen =
+    document.getElementById("gameScreen");
+
 
 /* ==========================================
    BUTTONS
@@ -42,6 +45,12 @@ const newGameBackButton =
 const continueBackButton =
     document.getElementById("continueBackButton");
 
+const enterWorldButton =
+    document.getElementById("enterWorldButton");
+
+const gameBackButton =
+    document.getElementById("gameBackButton");
+
 
 /* ==========================================
    SAVE DATA
@@ -61,6 +70,8 @@ function hideAllScreens() {
     newGameScreen.classList.add("hidden");
 
     continueScreen.classList.add("hidden");
+
+    gameScreen.classList.add("hidden");
 }
 
 
@@ -85,6 +96,14 @@ function showContinue() {
     hideAllScreens();
 
     continueScreen.classList.remove("hidden");
+}
+
+
+function showGame() {
+
+    hideAllScreens();
+
+    gameScreen.classList.remove("hidden");
 }
 
 
@@ -116,16 +135,7 @@ continueButton.addEventListener(
             return;
         }
 
-        const gameData =
-            JSON.parse(savedGame);
-
-        alert(
-            "Saved adventure found!\n\n" +
-            "Mode: " +
-            gameData.mode +
-            "\n\n" +
-            "The full adventure system will be added later."
-        );
+        showGame();
     }
 );
 
@@ -141,6 +151,12 @@ newGameBackButton.addEventListener(
 
 
 continueBackButton.addEventListener(
+    "click",
+    showLobby
+);
+
+
+gameBackButton.addEventListener(
     "click",
     showLobby
 );
@@ -170,10 +186,7 @@ fateboundModeButton.addEventListener(
         );
 
 
-        alert(
-            "Fatebound adventure created and saved."
-        );
-
+        showGame();
     }
 );
 
@@ -202,8 +215,21 @@ classicModeButton.addEventListener(
         );
 
 
+        showGame();
+    }
+);
+
+
+/* ==========================================
+   ENTER WORLD
+   ========================================== */
+
+enterWorldButton.addEventListener(
+    "click",
+    () => {
+
         alert(
-            "Classic adventure created and saved."
+            "The world will be built here next."
         );
 
     }
